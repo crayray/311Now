@@ -1,7 +1,20 @@
 Rails.application.routes.draw do
+  # get 'sessions/new'
+  # get 'sessions/create'
+  # get 'sessions/login'
+  # get 'sessions/welcome'
+ 
   resources :likes
   resources :comments
   resources :posts
-  resources :users
+  resources :users, only: [:new, :create]
+  get 'login', to: 'sessions#new', as: 'signup'
+  post 'login', to: 'sessions#create'
+  get 'welcome', to: 'sessions#welcome'
+  get 'feed', to: 'feed#index'
+  get 'logout', to: 'sessions#destroy', as: 'logout'
+  post 'logout', to: 'sessions#destroy'
+
+ 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
