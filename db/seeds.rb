@@ -13,11 +13,11 @@ grant= User.create(name:"Grant", username:"clariti", email:"grant@gmail.com")
 boris= User.create(name:"Boris", username:"Bobo", email:"boris@gmail.com")
 
 #posts
-post1= Post.create(title: "Crosswalk light out", description: "On south and northbound I-35 and 15th street, the pedestrian crosswalks are not blinking or responding to touch", neighborhood: "Central Austin", intersection: "15th and I-35", user_id: 5)
-post2= Post.create(title: "One foot deep", description: "There's a big old pothole that caused me to trip on my run to the dairy farm.", neighborhood: "North Austin", intersection: "50th and Lamar", user_id: 6)
-post3= Post.create(title: "Fallen tree obscuring bike path!", description: "Following the storm, a vicious tree collapse has impeded safe biking on the Walnut bike path", neighborhood: "East Austin", intersection: "Govalle and Springdale", user_id: 4)
-post4= Post.create(title: "Evil Grackle Staring me down", description: "While walking down the street, a grackle was watching me from a streetpost. It then swooped down and attacked my head. Then i tripped over a pothole. AUSTIN, GET YOUR ACT TOGETHER.", neighborhood: "Downtown Austin", intersection: "4th and Colorado", user_id: 4)
-post5= Post.create(title: "Ant hill flooded", description: "On the cherrywood creek trail, there is a massive ant mound that flooded. Ants are spilling out into the street by the thousands. It's a huge hazard for pedestrians", neighborhood: "East Austin", intersection: "15th and I-35", user_id: 3)
+post1= Post.create(title: "Crosswalk light out", description: "On south and northbound I-35 and 15th street, the pedestrian crosswalks are not blinking or responding to touch", neighborhood_id: 1, intersection: "15th and I-35", user_id: 5)
+post2= Post.create(title: "One foot deep", description: "There's a big old pothole that caused me to trip on my run to the dairy farm.", neighborhood_id: 2, intersection: "50th and Lamar", user_id: 6)
+post3= Post.create(title: "Fallen tree obscuring bike path!", description: "Following the storm, a vicious tree collapse has impeded safe biking on the Walnut bike path", neighborhood_id: 3, intersection: "Govalle and Springdale", user_id: 4)
+post4= Post.create(title: "Evil Grackle Staring me down", description: "While walking down the street, a grackle was watching me from a streetpost. It then swooped down and attacked my head. Then i tripped over a pothole. AUSTIN, GET YOUR ACT TOGETHER.", neighborhood_id: 4, intersection: "4th and Colorado", user_id: 4)
+post5= Post.create(title: "Ant hill flooded", description: "On the cherrywood creek trail, there is a massive ant mound that flooded. Ants are spilling out into the street by the thousands. It's a huge hazard for pedestrians", neighborhood_id: 5, intersection: "15th and I-35", user_id: 3)
 
 #comments
 comment1= Comment.create(body: "Whoaaaa, that's soooo intense!", user_id:7, post_id: 5)
@@ -32,3 +32,11 @@ like2= Like.create(user_id: 4, post_id: 2)
 like3= Like.create(user_id: 5, post_id: 3)
 like4= Like.create(user_id: 6, post_id: 4)
 like5= Like.create(user_id: 7, post_id: 5)
+
+#neighborhood
+downtown= Neighborhood.create(name: "Downtown Austin")
+eastside= Neighborhood.create(name: "East Austin")
+northaustin= Neighborhood.create(name: "North Austin")
+southside= Neighborhood.create(name: "South Austin")
+westside= Neighborhood.create(name: "West Austin")
+
