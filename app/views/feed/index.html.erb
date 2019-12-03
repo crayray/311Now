@@ -1,0 +1,9 @@
+<h3> Hi, <%= current_user.name %>, welcome to 311Now</h3>
+<ul>
+<% @posts.each do |p| %>
+  <li> <%= link_to p.title, p %></li>
+<% end %>
+</ul>
+<% if logged_in? %>
+  <%= button_to "Logout", logout_path %>
+<% end %>
