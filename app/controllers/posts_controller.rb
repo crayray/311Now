@@ -4,12 +4,15 @@ class PostsController < ApplicationController
     end
 
     def new
-        @posts= Post.all
+        @neighborhoods= Neighborhood.all
         @post= Post.new
     end
 
     def create
+        @neighborhoods= Neighborhood.all
+        @user= current_user
         @post= Post.new(post_params)
+        @post.user= current_user
 
         if @post.valid?
             @post.save
@@ -22,6 +25,6 @@ class PostsController < ApplicationController
     
     private
     def post_params
-        params.require(:post).permit(:title, :description, :neighborhood, :intersection)
+        params.require(:post).permit(:title, :description, :neighborhood_id, :intersection, :name)
       end
 end
