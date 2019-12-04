@@ -4,27 +4,20 @@ class CommentsController < ApplicationController
     end
 
     def create
-        @post = Post.find(params[:user_id]) 
+        @comment= Comment.new
+        @post = Post.find(params[:comment][:post_id]) 
     
         @user= current_user
         @comment.user= current_user
-        @comments = @post.comment.create(params[:body])  
-
-        
-        # @comment= Comment.new(comment_params)
-        # @user= current_user
-        # @comment.user= current_user
-        # post_id= params[:id]
-        
-        # @post = Post.find(post_id)
+        @comment = @post.comments.create(comment_params)  
          
         
-        # if @comments.valid?
-        #     @comments.save 
-        #     redirect_to @post
-        # else
-        #     render :new
-        # end
+        if @comment.valid?
+            @comment.save 
+            redirect_to @post
+        else
+            render :new
+        end
     end
 
     private
