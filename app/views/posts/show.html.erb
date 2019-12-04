@@ -9,7 +9,26 @@
     <%= c.text_area :body %>
     <%= c.submit %>
 <% end %> 
-<%= @post.comments %>
+<br> 
+<% if @post.comments.any? %>
+    <h3>Comments: </h3> 
+    <% @post.comments.each do |x|%>
+        <p><%= x.user.name %> said: <%= x.body %></p>
+    <% end %>
+<% end %>
+  
+<% if @post.image.attached? %>
+    <strong> Image: </strong>
+    <%= image_tag(@post.image) %>
+<% end %>
+
+   
+
+ 
+
+
+
+          
 
 
 

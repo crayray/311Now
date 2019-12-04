@@ -3,7 +3,7 @@ class PostsController < ApplicationController
         @post= Post.find(params[:id])
         @comment = Comment.new 
         @comments= Comment.where("post_id = ?", params[:id])
-        byebug
+        
     
     end
 
@@ -17,7 +17,7 @@ class PostsController < ApplicationController
         @user= current_user
         @post= Post.new(post_params)
         @post.user= current_user
-
+        # @post_image= @post.image.attach(params[:image])
         
         if @post.valid?
             @post.save
@@ -25,11 +25,11 @@ class PostsController < ApplicationController
         else    
             render :new
         end
-
+    
     end
     
     private
     def post_params
-        params.require(:post).permit(:title, :description, :neighborhood_id, :intersection, :name)
+        params.require(:post).permit(:title, :description, :neighborhood_id, :intersection, :name, :image)
       end
 end
