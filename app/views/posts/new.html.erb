@@ -7,10 +7,10 @@
     <%= p.text_area :description %>
 
     <%= p.label :intersection %>
-    <%= p.text_area :intersection %>
+    <%= p.text_area :intersection %><br>
 
-    <%= p.label :neighborhood %>
-    <%= p.collection_select (:post, :neighborhood, Post.all ) %>
+    <%= p.label :neighborhood_id %>
+    <%= p.collection_select(:neighborhood_id, @neighborhoods, :id, :name, prompt: true) %><br>
 
     <%= p.submit %>
 <% end %>
