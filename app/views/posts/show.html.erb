@@ -3,6 +3,13 @@
 <h3> Neighborhood: <%= @post.neighborhood.name %></h3>
 <p> Description: <%= @post.description %><p>
 
+<%= form_for @comment do |c| %>
+    <%= c.hidden_field :post_id , :value => @post.id %>
+    <%= c.label "Have a comment?" %>
+    <%= c.text_area :body %>
+    <%= c.submit %>
+<% end %> 
+
 
 
 

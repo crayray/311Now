@@ -1,9 +1,7 @@
 class PostsController < ApplicationController
     def show
         @post= Post.find(params[:id])
-        
-        # neighborhood_id= @post.neighborhood_id
-        # @neighborhood  = Neighborhood.find(neighborhood_id)
+        @comment = Comment.new 
         
     
     end
