@@ -10,18 +10,10 @@ class PostsController < ApplicationController
 
     def new
         @neighborhoods= Neighborhood.all
-<<<<<<< HEAD
-=======
-        @posts= Post.all
->>>>>>> collection-select-on-posts-form
         @post= Post.new
     end
 
     def create
-<<<<<<< HEAD
-=======
-        # We needed to add Neighborhood.all to make this available to the create action
->>>>>>> collection-select-on-posts-form
         @neighborhoods= Neighborhood.all
         @user= current_user
         @post= Post.new(post_params)
@@ -39,10 +31,6 @@ class PostsController < ApplicationController
     
     private
     def post_params
-<<<<<<< HEAD
         params.require(:post).permit(:title, :description, :neighborhood_id, :intersection, :name)
-=======
-        params.require(:post).permit(:title, :description, :neighborhood_id, :intersection)
->>>>>>> collection-select-on-posts-form
       end
 end
