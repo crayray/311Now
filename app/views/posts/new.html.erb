@@ -4,10 +4,10 @@
     <%= p.text_field :title %><br>
 
     <%= p.label :description %>
-    <%= p.text_area :description %>
+    <%= p.text_area :description %><br>
 
     <%= p.label :intersection %>
-    <%= p.text_area :intersection %><br>
+    <%= p.text_field :intersection %><br>
 
     <%= p.label :neighborhood_id %>
     <%= p.collection_select(:neighborhood_id, @neighborhoods, :id, :name, prompt: true) %><br>
