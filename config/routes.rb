@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get 'home', to: 'home#index'
   get 'logout', to: 'sessions#destroy', as: 'logout'
   post 'logout', to: 'sessions#destroy'
-
+  root 'sessions#create'
  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
