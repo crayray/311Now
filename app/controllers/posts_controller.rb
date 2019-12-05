@@ -27,9 +27,18 @@ class PostsController < ApplicationController
         end
     
     end
+
+    def search
+        @posts = Post.all
+        #neighborhood_id = @posts.last.neighborhood
+        #in order to filter the results, get all the posts
+        #iterate through @posts to get each post, to get the post with the neighborhood id matching the neighbord id selected by the user 
+        #@posts.each do |p| 
+       # if p.neighborhood == 
+    end
     
     private
     def post_params
-        params.require(:post).permit(:title, :description, :neighborhood_id, :intersection, :name, :image)
-      end
+        params.require(:post).permit(:title, :description, :neighborhood_id, :intersection, :name, :image, :neighborhood)
+    end
 end

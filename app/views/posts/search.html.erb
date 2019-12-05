@@ -1,0 +1,15 @@
+<h3>Find report incidents filed near you</h3>
+<%= select_tag 'neighborhood_id', options_for_select(@posts.collect{ |post| [post.neighborhood.name, post.neighborhood_id]}) %> 
+
+#use the choice from the drop down menu, save or store it, 
+#and then use that neighborhood id to filter through the @posts object
+#showing only those instances where the neighborhood id matches user input
+<% @posts.each do |post| %>
+   <% if select_tag == post.neighborhood_id
+        <%= 
+<% end %>
+
+<%= form_tag(posts_path method: :get) do %>
+    Search by Neighborhood <%= text_field_tag :neighborhood %>
+    <%= submit_tag 'Search' %>
+  <% end %>
