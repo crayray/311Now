@@ -12,9 +12,10 @@
     <%= p.label :neighborhood_id %>
     <%= p.collection_select(:neighborhood_id, @neighborhoods, :id, :name, prompt: true) %><br>
 
+    <%= p.label :image %>
+    <%= p.file_field :image %>
     <%= p.submit %>
 <% end %>
-
 
 <% if @post.errors.any? %>
   <div id="error_explanation">

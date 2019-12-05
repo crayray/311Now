@@ -1,32 +1,23 @@
 class PostsController < ApplicationController
     def show
         @post= Post.find(params[:id])
-        
-        # neighborhood_id= @post.neighborhood_id
-        # @neighborhood  = Neighborhood.find(neighborhood_id)
+        @comment = Comment.new 
+        @comments= Comment.where("post_id = ?", params[:id])
         
     
     end
 
     def new
         @neighborhoods= Neighborhood.all
-<<<<<<< HEAD
-=======
-        @posts= Post.all
->>>>>>> collection-select-on-posts-form
         @post= Post.new
     end
 
     def create
-<<<<<<< HEAD
-=======
-        # We needed to add Neighborhood.all to make this available to the create action
->>>>>>> collection-select-on-posts-form
         @neighborhoods= Neighborhood.all
         @user= current_user
         @post= Post.new(post_params)
         @post.user= current_user
-
+        # @post_image= @post.image.attach(params[:image])
         
         if @post.valid?
             @post.save
@@ -34,15 +25,11 @@ class PostsController < ApplicationController
         else    
             render :new
         end
-
+    
     end
     
     private
     def post_params
-<<<<<<< HEAD
-        params.require(:post).permit(:title, :description, :neighborhood_id, :intersection, :name)
-=======
-        params.require(:post).permit(:title, :description, :neighborhood_id, :intersection)
->>>>>>> collection-select-on-posts-form
+        params.require(:post).permit(:title, :description, :neighborhood_id, :intersection, :name, :image)
       end
 end
