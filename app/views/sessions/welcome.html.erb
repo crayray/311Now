@@ -1,14 +1,26 @@
 <% if logged_in? %>
-<h1>You are logged in, <%= current_user.username %></h1>
+<div class="container">
+<h1 style="text-align: center;">You are logged in, <%= current_user.username %></h1>
 <%end%>
+</div>
 
 <% if !logged_in? %>
-    <h1>Welcome to 311Now!</h1>
-    <p>Sign up or login to report issues in the Austin, Texas community so municipal policymakers can effectively deploy limited resources!<br>
-    Feel free to report road potholes, broken streetlights, overgrown trees, garbage, or vandalism of public spaces and infrastructure.</p>
-    <h4><%= button_to "Sign Up", '/users/new', method: :get%><br>
-    <%= button_to "Login", '/login', method: :get%><h4>
-<% end %> 
+    <h1 style="text-align: center;">Welcome to 311Now!</h1>
+    <div class= "container col-8">
+        <p style="text-align: center;">Sign up or login to report issues in the Austin, Texas community so municipal policymakers can effectively deploy limited resources!<br>
+        Feel free to report road potholes, broken streetlights, overgrown trees, garbage, or vandalism of public spaces and infrastructure.</p>
+        </div>
+        <div class= "row" style="text-align: center;">
+            <div class="col">
+            <%= button_to "Sign Up", '/users/new', method: :get%>
+            </div>
+            <div class="col">
+            <%= button_to "Login", '/login', method: :get%>
+            </div>
+        </div>
+    <% end %>
+    
+
 
 
 
