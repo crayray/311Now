@@ -1,9 +1,14 @@
-<h1>Sessions#welcome</h1>
-<p>Find me in app/views/sessions/welcome.html.erb</p>
 <% if logged_in? %>
-<h1>You are Logged In, <%= current_user.username %></h1>
+<h1>You are logged in, <%= current_user.username %></h1>
 <%end%>
-<%= button_to "Sign Up", '/users/new', method: :get%>
-<%= button_to "Login", '/login', method: :get%>
+
+<% if !logged_in? %>
+    <h1>Welcome to 311Now!</h1>
+    <p>Sign up or login to report issues in the Austin, Texas community so municipal policymakers can effectively deploy limited resources!<br>
+    Feel free to report road potholes, broken streetlights, overgrown trees, garbage, or vandalism of public spaces and infrastructure.</p>
+    <h4><%= button_to "Sign Up", '/users/new', method: :get%><br>
+    <%= button_to "Login", '/login', method: :get%><h4>
+<% end %> 
+
 
 
