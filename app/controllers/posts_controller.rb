@@ -16,7 +16,7 @@ class PostsController < ApplicationController
         @user= current_user
         @post= Post.new(post_params)
         @post.user= current_user
-        # @post_image= @post.image.attach(params[:image])
+
         
         if @post.valid?
             @post.save
@@ -33,9 +33,7 @@ class PostsController < ApplicationController
     end
     
     def require_login
-        
-        redirect_to login_path unless session.include? :user_id 
-        "please log in to view this page!"
+        redirect_to welcome_path unless session.include? :user_id 
     end
      
 end
