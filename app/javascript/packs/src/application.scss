@@ -15,52 +15,67 @@ $theme-colors: (
   "dark": #222222
 );
 
-$nav: #06648C;
+$nav: #154188;
 $black: black;
 
+body {
+    background: $white;
+    color: $black;
+    font-family: 'Merriweather', sans-serif;
+}
+
+// Customizing the hamburger menu
+.custom-toggler.navbar-toggler {
+    border-color: #ffffff;
+}
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+// Customizing bootstrap's nav link color
+.nav-link {
+    color: #ececec
+    !important
+}
+
+//customizing the brand color (311Now)
 #brand {
     color: white;
 }
 .navbar {
-        margin-bottom: 0;
+        margin-bottom: 20;
         background: $nav;
+        
 }
-body {
-        background: $white;
-        color: $black;
-        font-family: 'Merriweather', sans-serif;
+
+// .card p {
+//     text-align: center
+//     // margin: 10px;
+// }
+
+.py-1 {
+    padding-left: ($spacer * .5) !important;
+    padding-right: ($spacer * .5) !important;
+}
+.login {
+    background-color: #B6CBE7;
+}
+// .navbar {
+//     color: white;
+// }
+
+header {
+    margin-bottom: 55px;
 }
 h1,
 h2 {
         font-weight: bold;
 }
-p {
-        font-size: 16px;
-        color: $black;
-}
+
 a:visited {
         color: $black;
 }
-.jumbotron {
-        background: #0048CD;
-        color: $white;
-        text-align: center;
-        p {
-                color: $white;
-                font-size: 26px;
-        }
-}
 .link {
         color: $white;
-}
-.btn-primary {
-        color: $white;
-        border-color: $white;
-        margin-bottom: 5px;
-}
-.btn-sm {
-        background-color: $white;
-        display: inline-block;
 }
 img,
 video,
