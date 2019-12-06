@@ -1,21 +1,27 @@
-<h1> Log a Problem! </h1>
-<%= form_for @post do |p| %>
-    <%= p.label :title %>
-    <%= p.text_field :title %><br>
+<h1 style= "text-align: center"> Report a Problem! </h1>
 
-    <%= p.label :description %>
-    <%= p.text_area :description %><br>
+<div class="container jumbotron create_post">
+    <div class="row-lg">
+    <%= form_for @post do |p| %>
+      <%= p.label :title %>
+      <%= p.text_field :title %><br><br>
+  
+      <%= p.label :description %>
+      <%= p.text_area :description %><br><br>
+  
+      <%= p.label :intersection %>
+      <%= p.text_field :intersection %><br><br>
+  
+      <%= p.label :neighborhood_id %>
+      <%= p.collection_select(:neighborhood_id, @neighborhoods, :id, :name, prompt: true) %><br><br>
+  
+      <%= p.label :image %>
+      <%= p.file_field :image %><br><br>
+      <%= p.submit %><br>
+  <% end %>
+       
+</div>
 
-    <%= p.label :intersection %>
-    <%= p.text_field :intersection %><br>
-
-    <%= p.label :neighborhood_id %>
-    <%= p.collection_select(:neighborhood_id, @neighborhoods, :id, :name, prompt: true) %><br>
-
-    <%= p.label :image %>
-    <%= p.file_field :image %>
-    <%= p.submit %>
-<% end %>
 
 <% if @post.errors.any? %>
   <div id="error_explanation">

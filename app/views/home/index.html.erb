@@ -1,9 +1,25 @@
-<h3> Hi, <%= current_user.name %>, welcome to 311Now</h3>
-<ul>
-<% @posts.each do |p| %>
-  <li> <%= link_to p.title, p %></li>
-<% end %>
-</ul>
-<% if logged_in? %>
-  <%= button_to "Logout", logout_path %>
-<% end %>
+<div class= "container">
+  <div class= "text-right">
+    <% if logged_in? %>
+      <%= button_to "Logout", logout_path %>
+    <% end %>
+  </div>
+</div>
+
+<section id="about">
+    <div class="container">
+    <h4> Hi, <%= current_user.name %>, welcome to 311Now</h4><br>
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Recent posts:</h2>
+          <ul>
+          <% @posts.each do |p| %>
+            <li> <%= link_to p.title, p %></li>
+          <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+

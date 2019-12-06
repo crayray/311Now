@@ -17,7 +17,7 @@ $theme-colors: (
 
 $nav: #154188;
 $black: black;
-
+$purple: purple;
 body {
     background: $white;
     color: $black;
@@ -47,11 +47,6 @@ body {
         
 }
 
-// .card p {
-//     text-align: center
-//     // margin: 10px;
-// }
-
 .py-1 {
     padding-left: ($spacer * .5) !important;
     padding-right: ($spacer * .5) !important;
@@ -59,33 +54,43 @@ body {
 .login {
     background-color: #B6CBE7;
 }
-// .navbar {
-//     color: white;
-// }
+
 
 header {
     margin-bottom: 55px;
 }
-h1,
-h2 {
-        font-weight: bold;
-}
 
 a:visited {
-        color: $black;
+        color: $purple;
 }
 .link {
         color: $white;
 }
-img,
-video,
-audio {
-        margin-top: 20px;
-        max-width: 80%;
-}
-caption {
 
-        float: left;
-        clear: both;
+.comment_card {
+    margin-top: 10px;
+    margin-top: 10px;
+}
+.comment_card p {
+    margin: 10px;
+}
+
+.create_post {
+    background-color: #A9B9D3;
+    border-width: 15px;
+    border-style: solid;
+    border-color: #6A8253;
 
 }
+// img,
+// video,
+// audio {
+//         margin-top: 20px;
+//         max-width: 80%;
+// }
+// caption {
+
+//         float: left;
+//         clear: both;
+
+// }

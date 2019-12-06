@@ -10,8 +10,8 @@
         <h1 class="mt-4"><%= @post.title %></h1>
         <!-- Author -->
         <p class="lead">
-          <p>by <%= @post.user.name %></p>
-          <h4 class="mt-4">Neighborhood:<%= @post.neighborhood.name %></h4>
+          <p style= "font-weight: bold;">by <%= @post.user.username %></p>
+          <h4 sytle="font-weight:" bold;"class="mt-4">Neighborhood:<%= @post.neighborhood.name %></h4>
         <h4 class="mt-4">Intersection: <%= @post.intersection %></h4>
         
 
@@ -43,18 +43,19 @@
             <% end %> 
           </div>
         </div>
-  
-
-        <!-- Single Comment -->
-        <% if @post.comments.any? %>
-        <div class="media mb-4">
-            <h5 class="mt-0"></h5>
+        
+       <!-- Display Comments -->
+       <div class= "container ">
+         <% if @post.comments.any? %>
             <% @post.comments.each do |x|%>
-                <p><%= x.user.name %> said: <%= x.body %></p>
+                <div class="card comment_card">
+                <p><%= x.user.username %> said: <%= x.body %></p>
              <% end %>
-          </div>
+             </div>
+         <% end %>
         </div>
-        <% end %>
+        </div>
+    
 
 
     <!-- /.row -->
@@ -71,18 +72,3 @@
 
 </html>
 
-
-
-
-
-   
-
- 
-<!-- Single Comment -->
-<div class="media mb-4">
-          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-          <div class="media-body">
-            <h5 class="mt-0">Commenter Name</h5>
-            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-          </div>
-        </div>
