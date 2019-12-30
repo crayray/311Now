@@ -1,7 +1,7 @@
 <div class="container jumbotron login">
     <div class="row">
         <div class="col-lg-6">
-        <h3>Login</h3>
+        <h3 id="login-heading">Login</h3>
         <%= form_tag '/login' do %>
         <%= label_tag :username%>
         <%= text_field_tag :username %>
@@ -11,8 +11,8 @@
      <%end%>
 </div>
 <div class= "container" style= "margin-top:35px;">
-  <div class="card col-lg ">
-   <p class="py-1">You must be logged in to view or create content.</p>
+  <div class="card col-lg align-items-center">
+   <p class="m-1">You must be logged in to view or create content.</p>
   </div>
 </div>
 

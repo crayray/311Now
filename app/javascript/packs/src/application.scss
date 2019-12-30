@@ -55,7 +55,9 @@ body {
     background-color: #B6CBE7;
 }
 
-
+#login-heading {
+    margin-bottom: 25px;
+}
 header {
     margin-bottom: 55px;
 }
@@ -77,10 +79,26 @@ a:visited {
 
 .create_post {
     background-color: #A9B9D3;
-    border-width: 15px;
+    border-width: 2.5px;
     border-style: solid;
-    border-color: #6A8253;
+    border-color: #154188;
 
+}
+
+#home-posts {
+    margin-bottom: 75px;
+}
+
+#welcome-style {
+    text-align: center;
+    padding:  25px;
+}
+
+#sign-upstyle {
+    background-color: #A9B9D3;
+    border-width: 2.5px;
+    border-style: solid;
+    border-color: #154188;
 }
 // img,
 // video,
