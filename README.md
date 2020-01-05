@@ -50,6 +50,8 @@ Start the server and load the site on localhost:3000:
 ### 2) Report a problem
 ![report](https://media.giphy.com/media/joebMWxpACrpGcpTuZ/giphy.gif)
 
+
+***
 ![post](https://media.giphy.com/media/Ky5JReO17xVl4W5FIE/giphy.gif)
 
 ### 3) Checkout other Reports and add Comments
